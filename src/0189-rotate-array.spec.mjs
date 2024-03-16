@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { rotate, rotateUnshiftPop } from "./rotate-array.mjs";
+import { rotate, rotateUnshiftPop } from "./0189-rotate-array.mjs";
 
 describe("rotate array", () => {
   it("test case 01", () => {

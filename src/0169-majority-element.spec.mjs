@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { majorityElement } from "./majority-element.mjs";
+import { majorityElement } from "./0169-majority-element.mjs";
 
 describe("majority element", () => {
   it("test case 01", () => {
