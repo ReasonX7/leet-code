@@ -19,7 +19,7 @@ const reverse = (arr, start, end) => {
  * @param k {number}
  * @returns {void}
  */
-export const rotatePushSplice = (nums, k) => {
+export const rotate_PushSplice = (nums, k) => {
   // Split the nums array into two. The nums array will mutate,
   // leaving the numbers that should be at the start.
   // The numbers that should be moved to the end of the array
@@ -27,7 +27,7 @@ export const rotatePushSplice = (nums, k) => {
   nums.push(...nums.splice(0, nums.length - k % nums.length));
 };
 
-export const rotateUsingReversalAlgorithm = (nums, k) => {
+export const rotate_UsingReversalAlgorithm = (nums, k) => {
   const length = nums.length;
 
   while (k > length) {
@@ -39,12 +39,26 @@ export const rotateUsingReversalAlgorithm = (nums, k) => {
   reverse(nums, 0, length);
 };
 
-export const rotateUnshiftPop = (nums, k) => {
+export const rotate_UnshiftPop = (nums, k) => {
   for (let i = 0; i < k; i++) {
     nums.unshift(nums.pop());
   }
 }
 
-export const rotate = rotatePushSplice;
+export const rotate_FastestLeetCodeSolution = function (nums, k) {
+  const n = nums.length;
+
+  // If k is greater than array length, take its modulus
+  k %= n;
+
+  // Use splice to move the last k elements to the front
+  const rotatedPart = nums.splice(n - k, k);
+
+  // Concatenate the rotated part at the beginning of the array
+  nums.unshift(...rotatedPart);
+};
+
+export const rotate = rotate_PushSplice;
 // export const rotate = rotateUnshiftPop;
 // export const rotate = rotateUsingReversalAlgorithm;
+// export const rotate = rotate_FastestLeetCodeSolution;

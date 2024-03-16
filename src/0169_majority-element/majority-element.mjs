@@ -17,7 +17,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-export const majorityElement = (nums) => {
+export const majorityElement_Mine = (nums) => {
   let lead = nums[0];
   let count = 1;
   let n = nums.length / 2;
@@ -35,3 +35,16 @@ export const majorityElement = (nums) => {
 
   return lead;
 }
+
+export const majorityElement_FastestLeetCodeSolution = (nums) => {
+  let count = 0, leader;
+  for (let i = 0; i < nums.length; i++) {
+    if (count < 1) leader = nums[i]
+    if (nums[i] == leader) count++;
+    else count--;
+  }
+  return leader;
+};
+
+export const majorityElement = majorityElement_Mine;
+// export const majorityElement = majorityElement_FastestLeetCodeSolution;

@@ -15,7 +15,7 @@
 //  * Links:
 //  *   - [LeetCode Challenge](https://leetcode.com/problems/candy/description/?envType=study-plan-v2&envId=top-interview-150).
 //  */
-export const candyDoubleCycle = (ratings) => {
+export const candy_DoubleCycle = (ratings) => {
   const candies = Array.from({ length: ratings.length }).fill(1);
 
   for (let i = 1; i < ratings.length; i++) {
@@ -29,7 +29,7 @@ export const candyDoubleCycle = (ratings) => {
   return candies.reduce((sum, value) => sum + value);
 };
 
-export const candySingleCycleUnoptimized = (ratings) => {
+export const candy_SingleCycleUnoptimized = (ratings) => {
   const candies = new Array(ratings.length).fill(1);
 
   for (let index = 0, direction = 1; index < ratings.length; index += direction) {
@@ -60,7 +60,7 @@ export const candySingleCycleUnoptimized = (ratings) => {
 };
 
 
-export const candySingleCycle = (ratings) => {
+export const candy_SingleCycle = (ratings) => {
   const candies = new Array(ratings.length).fill(1);
 
   for (let index = 0, direction = 1/*, lastForwardIndex = -1*/; index < ratings.length; index += direction) {
@@ -104,7 +104,7 @@ export const candySingleCycle = (ratings) => {
   return candies.reduce((sum, value) => sum + value);
 };
 
-export const candyFastestLeetCodeSolution = (ratings) => {
+export const candy_FastestLeetCodeSolution = (ratings) => {
   const n = ratings.length;
   let result = 1;
   let candies = 1;
@@ -137,4 +137,4 @@ export const candyFastestLeetCodeSolution = (ratings) => {
 // export const candy = candyDoubleCycle;
 // export const candy = candySingleCycleUnoptimized;
 // export const candy = candySingleCycle;
-export const candy = candyFastestLeetCodeSolution;
+export const candy = candy_FastestLeetCodeSolution;
