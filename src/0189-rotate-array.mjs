@@ -19,7 +19,7 @@ const reverse = (arr, start, end) => {
  * @param k {number}
  * @returns {void}
  */
-export const rotate = (nums, k) => {
+export const rotatePushSplice = (nums, k) => {
   // Split the nums array into two. The nums array will mutate,
   // leaving the numbers that should be at the start.
   // The numbers that should be moved to the end of the array
@@ -44,3 +44,7 @@ export const rotateUnshiftPop = (nums, k) => {
     nums.unshift(nums.pop());
   }
 }
+
+export const rotate = rotatePushSplice;
+// export const rotate = rotateUnshiftPop;
+// export const rotate = rotateUsingReversalAlgorithm;
