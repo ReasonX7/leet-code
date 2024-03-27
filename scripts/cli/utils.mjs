@@ -11,5 +11,5 @@ export const toCapitalFirstAll = (str) => str
   .join(" ");
 
 export const toCamelCase = (str) => {
-  return str.split(/\s+/g).map((word, index) => index > 0 ? toCapitalFirst(word) : word.toLowerCase());
+  return str.split(/\s+/g).map((word, index) => index > 0 ? toCapitalFirst(word) : word.toLowerCase()).join("");
 }
