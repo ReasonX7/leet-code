@@ -6,7 +6,7 @@ import {
   candy_FastestLeetCodeSolution
 } from "./candy.mjs";
 
-describe("#0135 - Candy", () => {
+describe.skip("#0135 - Candy", () => {
   describe("Test Case #08", () => {
     const ratings = Array.from({ length: 2_000 }).map((value, index) => index + 1).reverse();
 

@@ -5,7 +5,7 @@ import {
   lengthOfLastWord_Split, lengthOfLastWord_SplitAt
 } from "./length-of-last-word.mjs";
 
-describe("#0058 - Length Of Last Word", () => {
+describe.skip("#0058 - Length Of Last Word", () => {
   describe("Test Case #01", () => {
     const str = "Hello World";
 

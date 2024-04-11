@@ -6,7 +6,7 @@ import {
   rotate_FastestLeetCodeSolution
 } from "./rotate-array.mjs";
 
-describe("#0189 - Rotate Array", () => {
+describe.skip("#0189 - Rotate Array", () => {
   describe("Test Case #01", () => {
     const nums = [1, 2, 3, 4, 5, 6, 7];
     const k = 3;

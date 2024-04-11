@@ -59,49 +59,30 @@ export const candy_SingleCycleUnoptimized = (ratings) => {
   return candies.reduce((sum, value) => sum + value);
 };
 
+export const candy_ImmediateCount = (ratings) => {
+  let count = 1;
+  let koef = 1;
+  let ascendKoef = 0;
 
-export const candy_SingleCycle = (ratings) => {
-  const candies = new Array(ratings.length).fill(1);
+  for (let i = 1; i < ratings.length - 1; i++) {
+    const prev = ratings[i - 1];
+    const next = ratings[i + 1];
+    const current = ratings[i];
 
-  for (let index = 0, direction = 1/*, lastForwardIndex = -1*/; index < ratings.length; index += direction) {
-    const leftRating = ratings[index - 1] || 0;
-    const rightRating = ratings[index + 1] || 0;
-    const currentRating = ratings[index];
+    // if ()
 
-    const leftCandiesCount = candies[index - 1] || 0;
-    const rightCandiesCount = candies[index + 1] || 0;
-    const currentCandiesCount = candies[index];
-
-    if (currentRating > leftRating && leftCandiesCount >= candies[index]) {
-      candies[index] = leftCandiesCount + (leftCandiesCount >= currentCandiesCount);
-    }
-
-    if (currentRating > rightRating && rightCandiesCount >= candies[index]) {
-      candies[index] = rightCandiesCount + (rightCandiesCount >= currentCandiesCount);
-    }
-
-    if (currentCandiesCount !== candies[index] && leftRating > currentRating) {
-      // const rightRightRating = ratings[index + 2] || 0;
-      //
-      // if (rightRating > rightRightRating) {
-      //   direction = -1;
-      // }
-      direction = -1;
-    } else {
-      direction = 1;
-    }
-
-    /*
-    if (direction === -1 && lastForwardIndex === -1) {
-      lastForwardIndex = index;
-    } else if (direction === 1 && lastForwardIndex > -1) {
-      index = lastForwardIndex;
-      lastForwardIndex = -1;
-    }
-     */
+    count += koef + ascendKoef;
+    console.log(`${i} |`, current, "|", "koef:", koef, "ascendKoef", ascendKoef, "count:", count);
   }
 
-  return candies.reduce((sum, value) => sum + value);
+  const last = ratings.at(-1);
+  const lastPrev = ratings.at(-2);
+
+  koef = lastPrev < last ? koef + 1 : 1;
+
+  console.log("final |", "koef:", koef, "ascendKoef:", ascendKoef);
+
+  return count + koef;
 };
 
 export const candy_FastestLeetCodeSolution = (ratings) => {
@@ -134,7 +115,7 @@ export const candy_FastestLeetCodeSolution = (ratings) => {
   return result;
 };
 
-// export const candy = candyDoubleCycle;
-// export const candy = candySingleCycleUnoptimized;
-// export const candy = candySingleCycle;
-export const candy = candy_FastestLeetCodeSolution;
+// export const candy = candy_DoubleCycle;
+// export const candy = candy_SingleCycleUnoptimized;
+export const candy = candy_ImmediateCount;
+// export const candy = candy_FastestLeetCodeSolution;
