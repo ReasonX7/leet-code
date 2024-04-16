@@ -1,9 +1,11 @@
 import { describe, bench } from "vitest";
 import {
-  mergeSortedArray_Efficient,
+  mergeSortedArray_TwoStep,
   mergeSortedArray_FastestLeetCodeSolution,
   mergeSortedArray_Stupid,
   mergeSortedArray_Overcomplicated,
+  mergeSortedArray_CheatLeetCodeSolution,
+  mergeSortedArray_Efficient,
 } from "./merge-sorted-array.mjs";
 
 describe("#0088 - Merge Sorted Array", () => {
@@ -21,12 +23,20 @@ describe("#0088 - Merge Sorted Array", () => {
       mergeSortedArray_Stupid(nums1, m, nums2, n);
     });
 
-    bench("mergeSortedArray_Efficient", () => {
-      mergeSortedArray_Efficient(nums1, m, nums2, n);
+    bench("mergeSortedArray_TwoStep", () => {
+      mergeSortedArray_TwoStep(nums1, m, nums2, n);
     });
 
     bench("mergeSortedArray_FastestLeetCodeSolution", () => {
       mergeSortedArray_FastestLeetCodeSolution(nums1, m, nums2, n);
+    });
+
+    bench("mergeSortedArray_Efficient", () => {
+      mergeSortedArray_Efficient(nums1, m, nums2, n);
+    });
+
+    bench("mergeSortedArray_CheatLeetCodeSolution", () => {
+      mergeSortedArray_CheatLeetCodeSolution(nums1, m, nums2, n);
     });
   });
 
@@ -44,12 +54,20 @@ describe("#0088 - Merge Sorted Array", () => {
       mergeSortedArray_Stupid(nums1, m, nums2, n);
     });
 
-    bench("mergeSortedArray_Efficient", () => {
-      mergeSortedArray_Efficient(nums1, m, nums2, n);
+    bench("mergeSortedArray_TwoStep", () => {
+      mergeSortedArray_TwoStep(nums1, m, nums2, n);
     });
 
     bench("mergeSortedArray_FastestLeetCodeSolution", () => {
       mergeSortedArray_FastestLeetCodeSolution(nums1, m, nums2, n);
+    });
+
+    bench("mergeSortedArray_Efficient", () => {
+      mergeSortedArray_Efficient(nums1, m, nums2, n);
+    });
+
+    bench("mergeSortedArray_CheatLeetCodeSolution", () => {
+      mergeSortedArray_CheatLeetCodeSolution(nums1, m, nums2, n);
     });
   });
 
@@ -67,12 +85,20 @@ describe("#0088 - Merge Sorted Array", () => {
       mergeSortedArray_Stupid(nums1, m, nums2, n);
     });
 
-    bench("mergeSortedArray_Efficient", () => {
-      mergeSortedArray_Efficient(nums1, m, nums2, n);
+    bench("mergeSortedArray_TwoStep", () => {
+      mergeSortedArray_TwoStep(nums1, m, nums2, n);
     });
 
     bench("mergeSortedArray_FastestLeetCodeSolution", () => {
       mergeSortedArray_FastestLeetCodeSolution(nums1, m, nums2, n);
+    });
+
+    bench("mergeSortedArray_Efficient", () => {
+      mergeSortedArray_Efficient(nums1, m, nums2, n);
+    });
+
+    bench("mergeSortedArray_CheatLeetCodeSolution", () => {
+      mergeSortedArray_CheatLeetCodeSolution(nums1, m, nums2, n);
     });
   });
 });

@@ -70,7 +70,7 @@ export const mergeSortedArray_Overcomplicated = (numsA, countA, numsB, countB) =
   }
 };
 
-export const mergeSortedArray_Efficient = (numsA, countA, numsB, countB) => {
+export const mergeSortedArray_TwoStep = (numsA, countA, numsB, countB) => {
   const maxA = numsA[countA - 1];
 
   let indexB = countB - 1;
@@ -101,6 +101,29 @@ export const mergeSortedArray_Efficient = (numsA, countA, numsB, countB) => {
   }
 };
 
+export const mergeSortedArray_Efficient = (numsA, countA, numsB, countB) => {
+  let indexA = countA - 1;
+  let indexB = countB - 1;
+
+  for (let indexG = indexA + indexB + 1; indexA >= 0 && indexB >= 0; indexG--) {
+    const currentA = numsA[indexA];
+    const currentB = numsB[indexB];
+
+    if (currentA > currentB) {
+      numsA[indexG] = currentA;
+      indexA--;
+    } else {
+      numsA[indexG] = currentB;
+      indexB--;
+    }
+  }
+
+  for (; indexB >= 0; indexB--) {
+    numsA[indexB] = numsB[indexB];
+  }
+};
+
+
 export const mergeSortedArray_FastestLeetCodeSolution = (nums1, m, nums2, n) => {
   let mIndex = m - 1;
   let nIndex = n - 1;
@@ -123,7 +146,15 @@ export const mergeSortedArray_FastestLeetCodeSolution = (nums1, m, nums2, n) => 
   }
 }
 
+const numSortCallback = (a, b) => a - b;
+
+export const mergeSortedArray_CheatLeetCodeSolution = (nums1, m, nums2, n) => {
+  for (var i = 0; i < n; nums1[i + m] = nums2[i++]) ;
+  nums1.sort(numSortCallback);
+}
+
 // export const mergeSortedArray = mergeSortedArray_Stupid;
 // export const mergeSortedArray = mergeSortedArray_Overcomplicated;
 // export const mergeSortedArray = mergeSortedArray_FastestLeetCodeSolution;
+// export const mergeSortedArray = mergeSortedArray_TwoStep;
 export const mergeSortedArray = mergeSortedArray_Efficient;
