@@ -66,7 +66,7 @@ const main = async () => {
   const capitalCaseTitle = toCapitalFirstAll(title);
 
   const strNum = num.toString().padStart(4, "0");
-  const describeTitle = `#${strNum} - ${dashCaseTitle}`;
+  const describeTitle = `#${strNum} - ${capitalCaseTitle}`;
   const folderName = `${strNum}_${dashCaseTitle}`;
   const problemFolder = path.join(sourceFolder, folderName);
   const mainFile = path.join(problemFolder, `${dashCaseTitle}.mjs`);
@@ -97,7 +97,7 @@ const main = async () => {
   await fsp.mkdir(problemFolder);
 
   await Promise.all([
-    await fsp.writeFile(mainFile, formMainFileContent(title)),
+    await fsp.writeFile(mainFile, formMainFileContent(capitalCaseTitle)),
     await fsp.writeFile(testFile, formTestFileContent(describeTitle)),
     await fsp.writeFile(benchFile, formBenchFileContent(describeTitle)),
   ]);
