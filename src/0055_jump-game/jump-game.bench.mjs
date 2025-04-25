@@ -1,7 +1,8 @@
 import { describe, bench } from "vitest";
-  
-describe("#0055 - Jump Game", () => {
-  describe("Test Case #01", () => {
+import { jumpGame } from "./jump-game.mjs";
 
+describe.skip("#0055 - Jump Game", () => {
+  bench("Test Case #01", () => {
+    jumpGame([2, 3, 1, 1, 4]);
   });
 });

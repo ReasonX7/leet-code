@@ -1,8 +1,10 @@
 import { describe, bench } from "vitest";
 import {
-  // findTheDuplicateNumber_KindaFloydButReallyNot,
+  findTheDuplicateNumber_KindaFloydButReallyNot,
   findTheDuplicateNumber_HashMap,
-  findTheDuplicateNumber_LeetCodeFastestSolution, findTheDuplicateNumber_Floyd, findTheDuplicateNumber_Unknown
+  findTheDuplicateNumber_LeetCodeFastestSolution,
+  findTheDuplicateNumber_Floyd,
+  findTheDuplicateNumber_Unknown,
 } from "./find-the-duplicate-number.mjs";
 
 describe.skip("#0287 - Find The Duplicate Number", () => {
@@ -17,9 +19,9 @@ describe.skip("#0287 - Find The Duplicate Number", () => {
       findTheDuplicateNumber_LeetCodeFastestSolution(nums);
     });
 
-    // bench("#findTheDuplicateNumber_KindaFloydButReallyNot", () => {
-    //   findTheDuplicateNumber_KindaFloydButReallyNot(nums);
-    // });
+    bench("#findTheDuplicateNumber_KindaFloydButReallyNot", () => {
+      findTheDuplicateNumber_KindaFloydButReallyNot(nums);
+    });
 
     bench("#findTheDuplicateNumber_Floyd", () => {
       findTheDuplicateNumber_Floyd(nums);
@@ -65,9 +67,9 @@ describe.skip("#0287 - Find The Duplicate Number", () => {
       findTheDuplicateNumber_LeetCodeFastestSolution(nums);
     });
 
-    // bench("#findTheDuplicateNumber_KindaFloydButReallyNot", () => {
-    //   findTheDuplicateNumber_KindaFloydButReallyNot(nums);
-    // });
+    bench("#findTheDuplicateNumber_KindaFloydButReallyNot", () => {
+      findTheDuplicateNumber_KindaFloydButReallyNot(nums);
+    });
 
     bench("#findTheDuplicateNumber_Floyd", () => {
       findTheDuplicateNumber_Floyd(nums);
@@ -89,9 +91,9 @@ describe.skip("#0287 - Find The Duplicate Number", () => {
       findTheDuplicateNumber_LeetCodeFastestSolution(nums);
     });
 
-    // bench("#findTheDuplicateNumber_KindaFloydButReallyNot", () => {
-    //   findTheDuplicateNumber_KindaFloydButReallyNot(nums);
-    // });
+    bench("#findTheDuplicateNumber_KindaFloydButReallyNot", () => {
+      findTheDuplicateNumber_KindaFloydButReallyNot(nums);
+    });
 
     bench("#findTheDuplicateNumber_Floyd", () => {
       findTheDuplicateNumber_Floyd(nums);

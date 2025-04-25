@@ -4,8 +4,6 @@ import { readJson } from "../../utils/file-system.mjs";
 
 describe("#0055 - Jump Game", () => {
   it("Test Case #01", () => {
-    console.log(import.meta.url)
-
     expect(jumpGame([2, 3, 1, 1, 4])).toBeTruthy();
   });
 
